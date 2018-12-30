@@ -9,7 +9,7 @@ async def fetch(by:str, query, endpoint=None):
             async with session.post(f"https://discordemoji.com/api/") as response:
                 r = await response.json()
         latest_emoji = ''
-        for emoji in r.json():
+        for emoji in r:
             if emoji[by] == query:
                 latest_emoji = emoji
             else:
@@ -20,8 +20,8 @@ async def fetch(by:str, query, endpoint=None):
             if not endpoint:
                 return latest_emoji
             else:
-                endpoints = ['title', 'id', 'slug', 'image', 'category', 'license', 'source', 'faves', 'author']
-                endpoint = endpoint.lower().replace('submitted_by', 'author').replace('favourite', 'faves').replace('favorite', 'faves')
+                endpoints = ['title', 'id', 'slug', 'image', 'category', 'license', 'source', 'faves', 'submitted_by']
+                endpoint = endpoint.lower().replace('author', 'submitted_by').replace('favourite', 'faves').replace('favorite', 'faves')
                 if not endpoint in endpoints:
                     available = ", ".join(endpoints)
                     raise InvalidOption(f"You have provided an invalid endpoint. Available Endpoints: {available}")
