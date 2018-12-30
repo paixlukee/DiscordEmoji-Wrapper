@@ -2,6 +2,23 @@ from .errors import InvalidOption
 import aiohttp
 
 async def fetch(option:str):
+    """
+    Fetch DE stats
+    
+    Parameters
+    ----------
+    option : str, stat that you want to fetch from the site
+    
+    Returns
+    -------
+    string
+        data given from the JSON response
+        
+    Raises
+    ------
+    InvalidOption
+        occurs when the option/endpoint is invalid   
+    """
     async with aiohttp.ClientSession() as session:
         async with session.post(f"https://discordemoji.com/api/?request=stats") as response:
             r = await response.json()
