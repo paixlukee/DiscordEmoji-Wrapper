@@ -2,6 +2,29 @@ from .errors import InvalidQuery, InvalidOption
 import aiohttp
 
 async def fetch(by:str, query, endpoint=None):
+    """
+    Fetch an emoji
+    
+    Parameters
+    ----------
+    by : str, fetch an emoji by (option)
+    query : query that you want to search for
+    endpoint : optional, if left None, JSON response will be returned
+    
+    Returns
+    -------
+    string
+        data given from the JSON response (if endpoint)
+    JSON
+        JSON response, not messed with (if endpoint is None)
+        
+    Raises
+    ------
+    InvalidQuery
+        occurs when the query is not listed on the site or the query is improperly formatted
+    InvalidOption
+        occurs when the option/endpoint is invalid   
+    """
     options = ['title', 'id', 'slug']
     by = by.lower()
     if by in options:
