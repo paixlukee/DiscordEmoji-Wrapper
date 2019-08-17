@@ -11,8 +11,7 @@ setup(
   download_url = 'https://github.com/paixlukee/DiscordEmoji-Wrapper/archive/0.0.1.tar.gz',
   keywords = ['apiwrapper', 'discordemoji'],
   install_requires=[
-          'aiohttp',
-          'json'
+          'aiohttp'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',
