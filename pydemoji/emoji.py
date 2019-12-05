@@ -1,7 +1,7 @@
 from .errors import InvalidQuery, InvalidOption
 import aiohttp
 
-async def fetch(by:str, query, endpoint=None):
+async def fetch(by:str, query, endpoint=None, case_sensitive=None):
     """
     Fetch an emoji
     
@@ -10,6 +10,7 @@ async def fetch(by:str, query, endpoint=None):
     by : str, fetch an emoji by (option)
     query : query that you want to search for
     endpoint : optional, if left None, JSON response will be returned
+    case_sensitive : bool, optional, if left None, it will NOT be case sensitive
     
     Returns
     -------
@@ -33,10 +34,16 @@ async def fetch(by:str, query, endpoint=None):
                 r = await response.json()
         latest_emoji = ''
         for emoji in r:
-            if emoji[by].lower() == query.lower():
-                latest_emoji = emoji
-            else:
-                pass
+            if not case_sensitive or case_sensitive == False:                
+                if emoji[by] == query:
+                    latest_emoji = emoji
+                else:
+                    pass
+             else:
+                if emoji[by].lower() == query.lower():
+                    latest_emoji = emoji
+                else:
+                    pass
         if latest_emoji == '':
             raise InvalidQuery("The query you have given is not listed on the site.")
         else:
