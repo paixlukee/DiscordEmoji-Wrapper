@@ -33,7 +33,7 @@ async def fetch(by:str, query, endpoint=None):
                 r = await response.json()
         latest_emoji = ''
         for emoji in r:
-            if emoji[by] == query:
+            if emoji[by].lower() == query.lower():
                 latest_emoji = emoji
             else:
                 pass
