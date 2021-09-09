@@ -1,4 +1,4 @@
-# DiscordEmoji.com API Wrapper for Python | Documentation
+# Emoji.gg API Wrapper for Python | Documentation
 
 ### Installation:
 To install with PIP, run this in your console:
