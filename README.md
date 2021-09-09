@@ -1,4 +1,4 @@
-# DiscordEmoji.com API Wrapper for Python | Documentation
+# Emoji.gg API Wrapper for Python | Documentation
 
 ### Installation:
 To install with PIP, run this in your console:
@@ -7,7 +7,7 @@ pip install pydemoji
 ```
 ### Stats:
 
-To fetch stats from [DiscordEmoji](https://discordemoji.com):
+To fetch stats from [Emoji.gg](https://emoji.gg):
 ```py
 from pydemoji import stats
 ...
@@ -17,14 +17,14 @@ Available Endpoints:
 
 | Endpoint | Description                                            |
 |----------|--------------------------------------------------------|
-| emoji    | Fetch the number of available emoji on DiscordEmoji.   |
-| users    | Fetch the number of users on DiscordEmoji.             |
-| faves    | Fetch the total number of faves on DiscordEmoji.       |
-| pending  | Fetch the number of pending approvals on DiscordEmoji. |
+| emoji    | Fetch the number of available emoji on Emoji.gg.   |
+| users    | Fetch the number of users on Emoji.gg.             |
+| faves    | Fetch the total number of faves on Emoji.gg.       |
+| pending  | Fetch the number of pending approvals on Emoji.gg. |
 
 ### Fetch Emoji:
 
-To fetch emojis from [DiscordEmoji](https://discordemoji.com):
+To fetch emojis from [Emoji.gg](https://emoji.gg):
 ```py
 from pydemoji import emoji
 ...

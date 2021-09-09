@@ -30,7 +30,7 @@ async def fetch(by:str, query, endpoint=None, case_sensitive=None):
     by = by.lower()
     if by in options:
         async with aiohttp.ClientSession() as session:
-            async with session.post(f"https://discordemoji.com/api/") as response:
+            async with session.post(f"https://emoji.gg/api/") as response:
                 r = await response.json()
         latest_emoji = ''
         for emoji in r:
