@@ -20,7 +20,7 @@ async def fetch(option:str):
         occurs when the option/endpoint is invalid   
     """
     async with aiohttp.ClientSession() as session:
-        async with session.post(f"https://discordemoji.com/api/?request=stats") as response:
+        async with session.post(f"https://emoji.gg/api/?request=stats") as response:
             r = await response.json()
 
     if option.upper() == 'EMOJI':
