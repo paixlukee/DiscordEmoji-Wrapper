@@ -12,7 +12,6 @@ setup(
   keywords = ['apiwrapper', 'discordemoji'],
   install_requires=[
           'aiohttp',
-          'json'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',
