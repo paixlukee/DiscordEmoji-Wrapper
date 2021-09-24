@@ -39,7 +39,7 @@ async def fetch(by:str, query, endpoint=None, case_sensitive=None):
                     latest_emoji = emoji
                 else:
                     pass
-             else:
+            else:
                 if emoji[by].lower() == query.lower():
                     latest_emoji = emoji
                 else:
